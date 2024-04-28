@@ -1,0 +1,40 @@
+# Here you can define credentials for different data sets and environment.
+
+# Here you can define training and inference configuration for training and inference pipeline.
+
+# Example:
+
+
+[MODEL]
+hidden_dim = 100
+
+[TRAIN]
+hidden_dim = 100
+batch_size = 128
+iterations = 1000
+device = 'cpu'
+p_m = 0.3
+alpha = 2.0
+K = 3
+beta = 1.0
+
+[PRETRAIN]
+pretrain = 1
+device = 'cpu'
+batch_size = 128
+epochs = 10
+save_dir = "./saved_models/vime/encoder_model.h5"
+p_m = 0.3
+alpha = 2.0
+K = 3
+beta = 1.0
+
+
+# [INFERENCE]
+# MODEL_DIR = "/models/dummy.p"
+# OUTPUT_DIR = "/data/output/inference.csv"
+# test1 = [1,2,3,4,5]
+# test2 = {k = "v",name = "dw"}
+
+
+

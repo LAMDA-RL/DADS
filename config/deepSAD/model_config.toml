@@ -1,0 +1,39 @@
+# Here you can define credentials for different data sets and environment.
+
+# Here you can define training and inference configuration for training and inference pipeline.
+
+# Example:
+
+
+[MODEL]
+eta = 1.0
+
+[TRAIN]
+lr = 0.001
+n_epochs = 50
+batch_size = 128
+weight_decay = 0.5e-6
+device = 'cpu'
+use_hsc = 1
+optimizer_name = 'adam'
+n_jobs_dataloader = 0
+
+[PRETRAIN]
+pretrain = 1
+ae_lr = 0.0001
+ae_n_epochs = 150
+ae_batch_size = 128
+ae_weight_decay = 0.5e-3
+device = 'cpu'
+optimizer_name = 'adam'
+n_jobs_dataloader = 0
+
+
+[INFERENCE]
+MODEL_DIR = "/models/dummy.p"
+OUTPUT_DIR = "/data/output/inference.csv"
+# test1 = [1,2,3,4,5]
+# test2 = {k = "v",name = "dw"}
+
+
+

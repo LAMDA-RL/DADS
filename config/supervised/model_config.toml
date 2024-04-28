@@ -1,0 +1,23 @@
+# Here you can define credentials for different data sets and environment.
+
+# Here you can define training and inference configuration for training and inference pipeline.
+
+# Example:
+
+
+[MODEL]
+LEARNING_RATE = 0.1
+N_ESTIMATORS = 100
+MAX_DEPTH = 3
+
+[TRAIN]
+SAVE_DIR = "/models/"
+
+[INFERENCE]
+MODEL_DIR = "/models/dummy.p"
+OUTPUT_DIR = "/data/output/inference.csv"
+# test1 = [1,2,3,4,5]
+# test2 = {k = "v",name = "dw"}
+
+
+

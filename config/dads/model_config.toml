@@ -1,0 +1,56 @@
+# Here you can define credentials for different data sets and environment.
+
+# Here you can define training and inference configuration for training and inference pipeline.
+
+# Example:
+[Environment]
+device = "cpu"
+sample_num = 10  # number data sampled when sampling dataset_unlabeled,
+max_trajectory = 5000  # number of steps per each episode
+check_num = 4  # confidence threshold
+search_percentage = 1.5  # used in adaptive confidence threshold
+reward_list = [1.0, -1.0, 5.0, 0.5]  # rewards used in calculating reward
+sampling_method_distribution = [0.7, 0.3]  # probability distribution used to choose unsupervised method
+anomaly_ratio = 0.2  # used in oversampling of labeled anomalies
+score_threshold = 0.7  # score threshold
+eval_interval = 500
+min_steps_before_searching = 20000  # warmup steps of searching
+
+[Agent]
+min_steps_before_learning = 5000  # warmup steps of learning
+batch_size = 64
+update_every_n_steps = 16
+learning_updates_per_learning_session = 16
+add_extra_noise = false
+discount_rate = 0.99
+num_episodes_to_run = 10   # episodes per training
+device = "cpu"
+
+automatically_tune_entropy_hyperparameter = true
+entropy_term_weight = "None"
+mu = 0.0  # OU noise (has no effect since add_extra_noise = false)
+theta = 0.1  # OU noise (has no effect since add_extra_noise = false)
+sigma = 0.1  # OU noise (has no effect since add_extra_noise = false)
+
+[Agent.Actor]
+learning_rate = 0.001
+linear_hidden_units = [32, 32, 16]
+final_layer_activation = "Sigmoid"
+batch_norm = false
+tau = 0.2
+gradient_clipping_norm = 5
+initialiser = "Xavier"
+
+[Agent.Critic]
+learning_rate = 0.001
+linear_hidden_units = [32, 32, 16]
+final_layer_activation = "None"
+batch_norm = false
+buffer_size = 100000
+tau = 0.2
+gradient_clipping_norm = 5
+initialiser = "Xavier"
+
+[INFERENCE]
+MODEL_DIR = "/models/dummy.p"
+OUTPUT_DIR = "/data/output/inference.csv"

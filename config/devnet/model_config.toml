@@ -1,0 +1,14 @@
+# Here you can define credentials for different data sets and environment.
+
+# Here you can define training and inference configuration for training and inference pipeline.
+
+# Example:
+
+
+[MODEL]
+network_depth = 2
+
+[TRAIN]
+epochs = 50
+batch_size = 512
+nb_batch = 20

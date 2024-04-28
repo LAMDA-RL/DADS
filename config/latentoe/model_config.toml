@@ -1,0 +1,40 @@
+# Here you can define credentials for different data sets and environment.
+
+# Here you can define training and inference configuration for training and inference pipeline.
+
+# Example:
+
+
+[MODEL]
+model = "tabNTL"
+network = "tabNTL"
+trainer = "NTL"
+device = "cuda:1"
+batch_size = 128
+learning_rate = 0.001
+training_epochs = 300
+train_method = "loe_soft"
+latent_dim = 32
+enc_hdim = 64
+enc_nlayers = 4
+num_trans = 9
+trans_nlayers = 2
+trans_hdim = 24
+trans_type = "residual"
+loss = "DCL"
+batch_norm = false
+loss_temp = 0.1
+l2 = 0.00001
+optimizer = "Adam"
+
+scheduler_class = "StepLR"
+scheduler_step_size = 300
+scheduler_gamma = 0.5
+
+early_stopper_class = "Patience"
+early_stopper_patience = 100
+early_stopper_use_train_loss = false
+
+shuffle = true
+num_repeat = 5
+save_scores = false

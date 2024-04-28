@@ -1,0 +1,12 @@
+# Here you can define credentials for different data sets and environment.
+
+# Here you can define training and inference configuration for training and inference pipeline.
+
+# Example:
+
+
+[MODEL]
+MODEL_TYPE = "isolation_forest"
+MAX_SAMPLES = 256
+K = 5
+
